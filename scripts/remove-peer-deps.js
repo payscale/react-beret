@@ -1,16 +1,19 @@
 const fs = require('fs');
 const jsonFormat = require('json-format');
-const config = require('./package.json');
+const config = require('../package.json');
 
-console.log('Removing peerDependencies from dependencies.');
+console.log('removing peerDependencies from dependencies');
 
 const peers = config.peerDependencies;
 const deps = config.dependencies;
 
-Object.keys(peers).forEach(peer => {
-  console.log(`Removing ${peer}`);
-  delete deps[peer];
-});
+if (deps && Object.keys(deps).length) {
+  Object.keys(peers).forEach(peer => {
+    if (peer in deps) {
+      delete deps[peer];
+    }
+  });
+}
 
 config.dependencies = deps;
 if (!deps || !Object.keys(deps).length) {
