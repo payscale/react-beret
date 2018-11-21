@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import WebFont from '../components/WebFont';
+import WebFont from '../lib/WebFont';
 
 describe('WebFont', () => {
   test('returns null element if no font families given', () => {

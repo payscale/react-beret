@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Vwo from '../components/Vwo';
+import Vwo from '../lib/Vwo';
 
 describe('Vwo', () => {
   test('exists and is not null', () => {

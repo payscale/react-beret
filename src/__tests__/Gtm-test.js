@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Gtm from '../components/Gtm';
+import Gtm from '../lib/Gtm';
 
 describe('Gtm', () => {
   test('exists and is not null', () => {

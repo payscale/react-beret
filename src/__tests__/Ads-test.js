@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Ads from '../components/Ads';
+import Ads from '../lib/Ads';
 
 describe('Ads', () => {
   test('exists and is not null', () => {

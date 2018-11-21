@@ -8,8 +8,9 @@
     "type": "git",
     "url": ""
   },
+  "main": "./dist/lib/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode=production",
     "lint:fix": "eslint --fix --config .eslintrc --format table src",
     "lint": "eslint --config .eslintrc --format table src",
     "start": "webpack-dev-server --hot --inline --config webpack.config.dev.js",
@@ -52,7 +53,6 @@
     "jest-teamcity-reporter": "0.9.0",
     "json-format": "1.0.1",
     "react-hot-loader": "4.3.12",
-    "uglifyjs-webpack-plugin": "2.0.1",
     "webpack": "4.26.0",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "3.1.10"

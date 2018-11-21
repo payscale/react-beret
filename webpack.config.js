@@ -1,32 +1,24 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: {
-  },
+  entry: path.resolve(__dirname, 'src/lib/index.js'),
   output: {
-    filename: '[name].js',
-    path: `${__dirname}/dist`
+    path: path.resolve(__dirname, './dist/lib'),
+    filename: 'index.js',
+    library: '',
+    libraryTarget: 'commonjs'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
-        exclude: ['/node_modules/', '/tests/']
-      }
-    ]
-  },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        include: /\.min\.js$/,
-        uglifyOptions: {
-          compress: {
-            warnings: false
-          }
+        exclude: ['/node_modules/', '/tests/'],
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/react']
         }
-      })
+      }
     ]
   }
 };
