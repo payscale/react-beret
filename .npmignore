@@ -3,8 +3,9 @@
 yarn.lock
 node_modules
 _teamcity
+scripts
 src
-.babelrc
+babel.config.js
 .eslintrc
 testSetup.js
 testShims.js

@@ -37,4 +37,8 @@ WebFont.propTypes = {
   )
 };
 
+WebFont.defaultProps = {
+  families: [{ fontName: 'Roboto', weights: [300, 400, 700, 900] }]
+};
+
 export default WebFont;
