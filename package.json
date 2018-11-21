@@ -11,17 +11,14 @@
   "main": "./dist/lib/index.js",
   "scripts": {
     "build": "webpack --mode=production",
+    "install:peers": "node ./scripts/install-peers.js",
     "lint:fix": "eslint --fix --config .eslintrc --format table src",
     "lint": "eslint --config .eslintrc --format table src",
     "start": "webpack-dev-server --hot --inline --config webpack.config.dev.js",
-    "teamcity-lint": "eslint --config .eslintrc --format ./node_modules/eslint-teamcity/index.js src",
-    "teamcity-test": "jest --testResultsProcessor jest-teamcity-reporter --no-cache",
+    "teamcity:lint": "eslint --config .eslintrc --format ./node_modules/eslint-teamcity/index.js src",
+    "teamcity:test": "jest --testResultsProcessor jest-teamcity-reporter --no-cache",
     "test": "jest",
-    "test:update": "jest --updateSnapshot",
-    "test:watch": "jest --watch",
-    "update-lock": "node ./scripts/update-yarn-lock.js",
-    "preinstall": "node ./scripts/add-peer-deps.js",
-    "postinstall": "node ./scripts/remove-peer-deps.js"
+    "test:watch": "jest --watch"
   },
   "jest": {
     "testURL": "http://localhost/",
@@ -31,6 +28,7 @@
     ]
   },
   "peerDependencies": {
+    "prop-types": "^15.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.0.0"

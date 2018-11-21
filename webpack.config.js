@@ -20,5 +20,29 @@ module.exports = {
         }
       }
     ]
+  },
+  externals: {
+    'prop-types': {
+      commonjs: 'prop-types',
+      commonjs2: 'prop-types',
+      amd: 'PropTypes',
+      root: 'PropTypes'
+    },
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React'
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'ReactDOM',
+      root: 'ReactDOM'
+    },
+    'react-helmet': {
+      commonjs: 'react-helmet',
+      commonjs2: 'react-helmet'
+    }
   }
 };
