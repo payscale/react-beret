@@ -1,0 +1,12 @@
+.git
+.gitignore
+yarn.lock
+node_modules
+_teamcity
+src
+.babelrc
+.eslintrc
+testSetup.js
+testShims.js
+jsconfig.json
+webpack.config.*

@@ -1,0 +1,58 @@
+{
+  "name": "skeleton",
+  "version": "0.1.0",
+  "description": "A web page template using React",
+  "author": "Jim Skerritt <jims@payscale.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "webpack",
+    "lint:fix": "eslint --fix --config .eslintrc --format table src",
+    "lint": "eslint --config .eslintrc --format table src",
+    "postinstall": "node ./scripts/remove-peer-deps.js",
+    "preinstall": "node ./scripts/add-peer-deps.js",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "teamcity-lint": "eslint --config .eslintrc --format ./node_modules/eslint-teamcity/index.js src",
+    "teamcity-test": "jest --testResultsProcessor jest-teamcity-reporter --no-cache",
+    "test": "jest",
+    "test:update": "jest --updateSnapshot",
+    "test:watch": "jest --watch",
+    "update-lock": "node ./scripts/update-yarn-lock.js"
+  },
+  "jest": {
+    "testURL": "http://localhost/",
+    "setupFiles": [
+      "<rootDir>/test-shims.js",
+      "<rootDir>/test-setup.js"
+    ]
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.6",
+    "@babel/preset-env": "7.1.6",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.7.0",
+    "eslint": "5.9.0",
+    "eslint-config-payscale": "1.0.5",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-teamcity": "2.1.0",
+    "jest": "23.6.0",
+    "jest-teamcity-reporter": "0.9.0",
+    "json-format": "1.0.1",
+    "uglifyjs-webpack-plugin": "2.0.1",
+    "webpack": "4.26.0",
+    "webpack-dev-server": "3.1.10"
+  }
+}
