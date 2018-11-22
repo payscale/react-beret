@@ -1,7 +1,7 @@
 {
   "name": "skeleton",
   "version": "0.1.0",
-  "description": "A web page template using React",
+  "description": "React components for your web page's tracking, assets, and more",
   "author": "Jim Skerritt <jims@payscale.com>",
   "license": "MIT",
   "repository": {
