@@ -6,7 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/payscale/skeleton"
+  },
+  "keywords": ["skeleton", "assets", "tracking", "gtm", "web", "react", "html"],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "main": "./dist/lib/index.js",
   "scripts": {
