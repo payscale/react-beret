@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/payscale/skeleton/tree/master.svg?style=svg)](https://circleci.com/gh/payscale/skeleton/tree/master)
+
 # skeleton
 
 Skeleton is a library for building HTML templates with React. It contains components for encapsulating the stuff that your page needs to work. Things like Google Tag Manager, web fonts, etc., are required, but are distractions from actually building your content. Componentizing them with skeleton helps you to get back to what matters and prevent plugins and assets from falling through the cracks.
