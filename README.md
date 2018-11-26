@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/payscale/skeleton/tree/master.svg?style=svg)](https://circleci.com/gh/payscale/skeleton/tree/master)
+[![CircleCI](https://circleci.com/gh/payscale/react-beret.svg?style=svg)](https://circleci.com/gh/payscale/react-beret)
+
 
 # beret
 
