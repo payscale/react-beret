@@ -1,8 +1,10 @@
 [![CircleCI](https://circleci.com/gh/payscale/skeleton/tree/master.svg?style=svg)](https://circleci.com/gh/payscale/skeleton/tree/master)
 
-# skeleton
+# beret
 
-Skeleton is a library for building HTML templates with React. It contains components for encapsulating the stuff that your page needs to work. Things like Google Tag Manager, web fonts, etc., are required, but are distractions from actually building your content. Componentizing them with skeleton helps you to get back to what matters and prevent plugins and assets from falling through the cracks.
+Beret is a library for building HTML templates with React. It contains components for encapsulating the stuff that your page needs to work. Things like Google Tag Manager, web fonts, etc., are required, but are distractions from actually building your content. Componentizing them with beret helps you to get back to what matters and prevent plugins and assets from falling through the cracks.
+
+Beret is intended to be used with server side rendering since many resources are required to be on the page before it is loaded. We also recommend using [React Helmet](https://github.com/nfl/react-helmet) to manage changes to the document head.
 
 ## Contributing
 

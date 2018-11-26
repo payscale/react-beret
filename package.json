@@ -1,15 +1,16 @@
 {
-  "name": "skeleton",
+  "name": "react-beret",
   "version": "0.1.0",
   "description": "React components for your web page's tracking, assets, and more",
   "author": "Jim Skerritt <jims@payscale.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/payscale/skeleton"
+    "url": "https://github.com/payscale/react-beret"
   },
   "keywords": [
-    "skeleton",
+    "react-beret",
+    "beret",
     "assets",
     "tracking",
     "gtm",
