@@ -8,7 +8,15 @@
     "type": "git",
     "url": "https://github.com/payscale/skeleton"
   },
-  "keywords": ["skeleton", "assets", "tracking", "gtm", "web", "react", "html"],
+  "keywords": [
+    "skeleton",
+    "assets",
+    "tracking",
+    "gtm",
+    "web",
+    "react",
+    "html"
+  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
@@ -19,8 +27,6 @@
     "lint:fix": "eslint --fix --config .eslintrc --format table src",
     "lint": "eslint --config .eslintrc --format table src",
     "start": "webpack-dev-server --hot --inline --config webpack.config.dev.js",
-    "teamcity:lint": "eslint --config .eslintrc --format ./node_modules/eslint-teamcity/index.js src",
-    "teamcity:test": "jest --testResultsProcessor jest-teamcity-reporter --no-cache",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -50,9 +56,7 @@
     "eslint": "5.9.0",
     "eslint-config-payscale": "1.0.5",
     "eslint-plugin-react": "7.11.1",
-    "eslint-teamcity": "2.1.0",
     "jest": "23.6.0",
-    "jest-teamcity-reporter": "0.9.0",
     "json-format": "1.0.1",
     "react-hot-loader": "4.3.12",
     "webpack": "4.26.0",
