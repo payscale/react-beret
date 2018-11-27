@@ -1,11 +1,19 @@
 [![CircleCI](https://circleci.com/gh/payscale/react-beret.svg?style=svg)](https://circleci.com/gh/payscale/react-beret)
 
-
 # beret
 
 Beret is a library for building HTML templates with React. It contains components for encapsulating the stuff that your page needs to work. Things like Google Tag Manager, web fonts, etc., are required, but are distractions from actually building your content. Componentizing them with beret helps you to get back to what matters and prevent plugins and assets from falling through the cracks.
 
-Beret is intended to be used with server side rendering since many resources are required to be on the page before it is loaded. We also recommend using [React Helmet](https://github.com/nfl/react-helmet) to manage changes to the document head.
+Beret is intended to be used with server-side rendering since many resources are required to be on the page before it is loaded. We use [React Helmet](https://github.com/nfl/react-helmet) to manage head elements.
+
+## Example
+
+To see an example of beret in action, check out the `examples` folder. It uses server-side rendering to create `index.html`. You can view the result in this repository or follow these steps to play with it for yourself:
+
+1. Clone this repository.
+1. Run `yarn install:peers` to install all dependencies and peer dependencies.
+1. Run `yarn example`.
+1. Open `examples/index.html` in your editor or your browser.
 
 ## Contributing
 

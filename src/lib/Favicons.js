@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 const Favicons = ({ favicons }) => {
@@ -7,16 +8,17 @@ const Favicons = ({ favicons }) => {
   }
 
   return (
-    <React.Fragment>
+    <Helmet>
       {favicons.map(favicon => (
         <link
+          key={favicon.href}
           rel={favicon.rel || 'icon'}
           href={favicon.href}
           sizes={favicon.sizes}
           type={favicon.type}
         />)
       )}
-    </React.Fragment>
+    </Helmet>
   );
 };
 

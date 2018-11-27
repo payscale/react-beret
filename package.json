@@ -24,10 +24,10 @@
   "main": "./dist/lib/index.js",
   "scripts": {
     "build": "webpack --mode=production",
+    "example": "node examples/index.js",
     "install:peers": "node ./scripts/install-peers.js",
     "lint:fix": "eslint --fix --config .eslintrc --format table src",
     "lint": "eslint --config .eslintrc --format table src",
-    "start": "webpack-dev-server --hot --inline --config webpack.config.dev.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -39,15 +39,16 @@
     ]
   },
   "peerDependencies": {
-    "prop-types": "^15.0.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-helmet": "^5.0.0"
+    "prop-types": ">=15.0.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
+    "react-helmet": ">=4.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
     "@babel/preset-env": "7.1.6",
     "@babel/preset-react": "7.0.0",
+    "@babel/register": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
@@ -59,9 +60,7 @@
     "eslint-plugin-react": "7.11.1",
     "jest": "23.6.0",
     "json-format": "1.0.1",
-    "react-hot-loader": "4.3.12",
     "webpack": "4.26.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "3.1.10"
+    "webpack-cli": "^3.1.2"
   }
 }

@@ -1,13 +1,14 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
 const Vwo = ({ accountId, init }) => {
   window.__vwo_init = init ? init : Vwo.defaultProps.init;
   return (
-    <script
-      dangerouslySetInnerHTML={{
-        __html: `var _vwo_settings_timer;
+    <Helmet>
+      <script>
+        {`var _vwo_settings_timer;
 var _vwo_code = (function () {
   var account_id = '${accountId}',
   settings_tolerance = 2000,
@@ -15,9 +16,9 @@ var _vwo_code = (function () {
   use_existing_jquery = false,
   f = false, d = document; return { use_existing_jquery: function () { return use_existing_jquery; }, library_tolerance: function () { return library_tolerance; }, finish: function () { if (!f) { f = true; var a = d.getElementById('_vis_opt_path_hides'); if (a) a.parentNode.removeChild(a); } }, finished: function () { return f; }, load: function (a) { var b = d.createElement('script'); b.src = a; b.type = 'text/javascript'; b.innerText; b.onerror = function () { _vwo_code.finish(); }; d.getElementsByTagName('head')[0].appendChild(b); }, init: function () { settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance); var a = d.createElement('style'), b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}', h = d.getElementsByTagName('head')[0]; a.setAttribute('id', '_vis_opt_path_hides'); a.setAttribute('type', 'text/css'); if (a.styleSheet) a.styleSheet.cssText = b; else a.appendChild(d.createTextNode(b)); h.appendChild(a); this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random()); return settings_timer; } };
 }());
-__vwo_init(_vwo_code);`
-      }}
-    />
+__vwo_init(_vwo_code);`}
+      </script>
+    </Helmet>
   );
 };
 
