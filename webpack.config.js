@@ -3,12 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    Ads: './src/components/Ads.js',
-    Favicons: './src/components/Favicons.js',
-    Gtm: './src/components/Gtm.js',
-    GtmNoScript: './src/components/GtmNoScript.js',
-    Vwo: './src/components/Vwo.js',
-    WebFont: './src/components/WebFont.js',
+    index: path.resolve(__dirname, './src/components/index.js')
   },
   output: {
     path: path.resolve(__dirname, 'lib'),
