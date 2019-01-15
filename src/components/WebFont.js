@@ -1,16 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const WebFont = ({ families }) => {
   if (!families || !families.length) {
     return null;
   }
 
-  const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`);
+  const familyStrings = families.map(
+    family => `${family.fontName}:${family.weights.join(",")}`
+  );
 
   return (
-      <script>
-        {`WebFontConfig = {
+    <script>
+      {`WebFontConfig = {
   google: { families: ${JSON.stringify(familyStrings)} }
 };
 (function() {
@@ -22,7 +24,7 @@ const WebFont = ({ families }) => {
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(wf, s);
 })();`}
-      </script>
+    </script>
   );
 };
 
@@ -30,13 +32,15 @@ WebFont.propTypes = {
   families: PropTypes.arrayOf(
     PropTypes.shape({
       fontName: PropTypes.string,
-      weights: PropTypes.arrayOf(PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900]))
+      weights: PropTypes.arrayOf(
+        PropTypes.oneOf([100, 200, 300, 400, 500, 600, 700, 800, 900])
+      )
     })
   )
 };
 
 WebFont.defaultProps = {
-  families: [{ fontName: 'Roboto', weights: [300, 400, 700, 900] }]
+  families: [{ fontName: "Roboto", weights: [300, 400, 700, 900] }]
 };
 
 export default WebFont;
