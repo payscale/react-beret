@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Helmet from 'react-helmet';
 import Vwo from '../components/Vwo';
 
 describe('Vwo', () => {
@@ -11,8 +10,7 @@ describe('Vwo', () => {
   });
 
   test('contains accountId', () => {
-    mount(<Vwo accountId="test12345" />);
-    const helmet = Helmet.peek();
-    expect(helmet.scriptTags.some(tag => tag.innerHTML.indexOf(`test12345`) > -1)).toBe(true);
+    const vwo = mount(<Vwo accountId="test12345" />);
+    expect(vwo.html().indexOf(`test12345`) > -1).toBe(true);
   });
 });

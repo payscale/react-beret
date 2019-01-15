@@ -41,10 +41,6 @@ module.exports = {
       commonjs2: 'react-dom',
       amd: 'ReactDOM',
       root: 'ReactDOM'
-    },
-    'react-helmet': {
-      commonjs: 'react-helmet',
-      commonjs2: 'react-helmet'
     }
   }
 };

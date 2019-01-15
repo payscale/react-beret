@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Helmet from 'react-helmet';
 import Gtm from '../components/Gtm';
 
 describe('Gtm', () => {
@@ -11,8 +10,7 @@ describe('Gtm', () => {
   });
 
   test('contains containerId', () => {
-    mount(<Gtm containerId="test12345" />);
-    const helmet = Helmet.peek();
-    expect(helmet.scriptTags.some(tag => tag.innerHTML.indexOf(`test12345`) > -1)).toBe(true);
+    const gtm = mount(<Gtm containerId="test12345" />);
+    expect(gtm.html().indexOf(`test12345`) > -1).toBe(true);
   });
 });

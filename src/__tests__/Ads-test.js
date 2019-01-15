@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Helmet from 'react-helmet';
 import Ads from '../components/Ads';
 
 describe('Ads', () => {
@@ -20,10 +19,10 @@ describe('Ads', () => {
         elementId: 'testAd'
       }
     ];
-    mount(<Ads slots={slots} />);
-    const helmet = Helmet.peek();
-    expect(helmet.scriptTags.some(tag => tag.innerHTML.indexOf(
+    const ads = mount(<div><Ads slots={slots} /></div>);
+
+    expect(ads.html().indexOf(
       `googletag.defineSlot('/123456/Test_100x100', [100, 100], 'testAd').addService(googletag.pubads());`
-    ) > -1)).toBe(true);
+    ) > -1).toBe(true);
   });
 });

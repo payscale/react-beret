@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Helmet from 'react-helmet';
 import WebFont from '../components/WebFont';
 
 describe('WebFont', () => {
@@ -10,7 +9,7 @@ describe('WebFont', () => {
   });
 
   test('contains font family strings', () => {
-    mount(
+    const webfont = mount(
       <WebFont
         families={[
           {
@@ -20,7 +19,6 @@ describe('WebFont', () => {
         ]}
       />
     );
-    const helmet = Helmet.peek();
-    expect(helmet.scriptTags.some(tag => tag.innerHTML.indexOf(`["Roboto:300,500,700"]`) > -1)).toBe(true);
+    expect(webfont.html().indexOf(`["Roboto:300,500,700"]`) > -1).toBe(true);
   });
 });

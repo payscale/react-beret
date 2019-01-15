@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 // Google Ads Marketing (DoubleClick)
@@ -12,7 +11,7 @@ const Ads = ({ slots }) => {
   );
 
   return (
-    <Helmet>
+    <React.Fragment>
       <script>
         {`var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -36,7 +35,7 @@ googletag.cmd = googletag.cmd || [];
   googletag.enableServices();
 });`}
       </script>
-    </Helmet>
+    </React.Fragment>
   );
 };
 

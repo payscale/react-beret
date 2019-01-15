@@ -4,7 +4,7 @@
 
 Beret is a library for building HTML templates with React. It contains components for encapsulating the stuff that your page needs to work. Things like Google Tag Manager, web fonts, etc., are required, but are distractions from actually building your content. Componentizing them with beret helps you to get back to what matters and prevent plugins and assets from falling through the cracks.
 
-Beret is intended to be used with server-side rendering since many resources are required to be on the page before it is loaded. We use [React Helmet](https://github.com/nfl/react-helmet) to manage head elements.
+Beret is intended to be used with server-side rendering since many resources are required to be on the page before it is loaded.
 
 ## Example
 

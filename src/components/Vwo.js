@@ -1,12 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
 const Vwo = ({ accountId, init }) => {
   window.__vwo_init = init ? init : Vwo.defaultProps.init;
   return (
-    <Helmet>
       <script>
         {`var _vwo_settings_timer;
 var _vwo_code = (function () {
@@ -18,7 +16,6 @@ var _vwo_code = (function () {
 }());
 __vwo_init(_vwo_code);`}
       </script>
-    </Helmet>
   );
 };
 

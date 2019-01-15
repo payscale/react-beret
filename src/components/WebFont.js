@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 const WebFont = ({ families }) => {
@@ -10,7 +9,6 @@ const WebFont = ({ families }) => {
   const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`);
 
   return (
-    <Helmet>
       <script>
         {`WebFontConfig = {
   google: { families: ${JSON.stringify(familyStrings)} }
@@ -25,7 +23,6 @@ const WebFont = ({ families }) => {
   s.parentNode.insertBefore(wf, s);
 })();`}
       </script>
-    </Helmet>
   );
 };
 
