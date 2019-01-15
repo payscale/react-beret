@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Helmet from 'react-helmet';
-import Gtm from '../lib/Gtm';
+import Gtm from '../components/Gtm';
 
 describe('Gtm', () => {
   test('exists and is not null', () => {

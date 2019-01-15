@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const { spawnSync } = require('child_process');
+const { execSync } = require('child_process');
 const addPeerDeps = require('./add-peer-deps');
 const removePeerDeps = require('./remove-peer-deps');
 
 addPeerDeps();
-spawnSync('yarn', {
+execSync('yarn', {
   cwd: path.join(__dirname, '..'),
   stdio: [process.stdin, process.stdout, process.stderr],
   encoding: 'utf-8'

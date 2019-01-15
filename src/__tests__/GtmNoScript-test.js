@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import GtmNoScript from '../lib/GtmNoScript';
+import GtmNoScript from '../components/GtmNoScript';
 
 describe('GtmNoScript', () => {
   test('exists and is not null', () => {
