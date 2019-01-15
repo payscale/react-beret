@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Helmet from 'react-helmet';
-import Ads from '../lib/Ads';
+import Ads from '../components/Ads';
 
 describe('Ads', () => {
   test('exists and is not null', () => {

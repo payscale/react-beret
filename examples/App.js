@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ads, Favicons, Gtm, WebFont } from '../src/lib';
+import { Ads, Favicons, Gtm, WebFont } from '../src/components';
 
 const App = () => (
   <div className="example-app" style={{ fontFamily: 'Roboto, sans-serif', fontSize: '32px' }}>

@@ -7,7 +7,7 @@ examples
 jsconfig.json
 node_modules
 scripts
-src/__tests__
+src
 testSetup.js
 testShims.js
 webpack.config.*

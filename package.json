@@ -1,6 +1,6 @@
 {
   "name": "react-beret",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React components for your web page's tracking, assets, and more",
   "author": "Jim Skerritt <jims@payscale.com>",
   "license": "MIT",
@@ -21,10 +21,11 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "main": "./dist/lib/index.js",
+  "main": "./index.js",
   "scripts": {
     "build": "webpack --mode=production",
     "example": "node examples/index.js",
+    "start": "yarn example",
     "install:peers": "node ./scripts/install-peers.js",
     "lint:fix": "eslint --fix --config .eslintrc --format table src",
     "lint": "eslint --config .eslintrc --format table src",

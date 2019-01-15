@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Helmet from 'react-helmet';
-import WebFont from '../lib/WebFont';
+import WebFont from '../components/WebFont';
 
 describe('WebFont', () => {
   test('returns null element if no font families given', () => {

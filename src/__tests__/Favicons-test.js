@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Favicons from '../lib/Favicons';
+import Favicons from '../components/Favicons';
 
 describe('Favicons', () => {
   test('renders null element if no favicons', () => {

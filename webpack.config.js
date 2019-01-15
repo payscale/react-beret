@@ -2,10 +2,17 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: path.resolve(__dirname, 'src/lib/index.js'),
+  entry: {
+    Ads: './src/components/Ads.js',
+    Favicons: './src/components/Favicons.js',
+    Gtm: './src/components/Gtm.js',
+    GtmNoScript: './src/components/GtmNoScript.js',
+    Vwo: './src/components/Vwo.js',
+    WebFont: './src/components/WebFont.js',
+  },
   output: {
-    path: path.resolve(__dirname, './dist/lib'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, 'lib'),
+    filename: '[name].js',
     library: '',
     libraryTarget: 'commonjs'
   },

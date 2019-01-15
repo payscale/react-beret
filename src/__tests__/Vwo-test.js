@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Helmet from 'react-helmet';
-import Vwo from '../lib/Vwo';
+import Vwo from '../components/Vwo';
 
 describe('Vwo', () => {
   test('exists and is not null', () => {
