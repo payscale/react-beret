@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 const WebFont = ({ families }) => {
@@ -10,22 +9,20 @@ const WebFont = ({ families }) => {
   const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`);
 
   return (
-    <Helmet>
-      <script>
-        {`WebFontConfig = {
-  google: { families: ${JSON.stringify(familyStrings)} }
+    <script>
+      {`WebFontConfig = {
+google: { families: ${JSON.stringify(familyStrings)} }
 };
 (function() {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-  '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
+var wf = document.createElement('script');
+wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+'://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+wf.type = 'text/javascript';
+wf.async = 'true';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(wf, s);
 })();`}
-      </script>
-    </Helmet>
+    </script>
   );
 };
 
