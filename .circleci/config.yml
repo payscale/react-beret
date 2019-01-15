@@ -25,4 +25,4 @@ jobs:
 
       - run: yarn lint
 
-      - run: yarn tests
+      - run: yarn test
