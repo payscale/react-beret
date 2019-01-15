@@ -12,8 +12,9 @@ const Ads = ({ slots }) => {
 
   return (
     <React.Fragment>
-      <script>
-        {`var googletag = googletag || {};
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
 (function () {
   var gads = document.createElement('script');
@@ -23,18 +24,21 @@ googletag.cmd = googletag.cmd || [];
   gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
   var node = document.getElementsByTagName('script')[0];
   node.parentNode.insertBefore(gads, node);
-})();`}
-      </script>
-      <script>
-        {`googletag.cmd.push(function () {
+})();`
+        }}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `googletag.cmd.push(function () {
   if (hasAcceptedCookiePolicy()) {
     ${adStrings.join()}
   }
   googletag.pubads().enableSingleRequest();
   googletag.pubads().collapseEmptyDivs();
   googletag.enableServices();
-});`}
-      </script>
+});`
+        }}
+      />
     </React.Fragment>
   );
 };
