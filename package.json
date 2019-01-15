@@ -1,6 +1,6 @@
 {
   "name": "react-beret",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React components for your web page's tracking, assets, and more",
   "author": "Jim Skerritt <jims@payscale.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "main": "./index.js",
+  "main": "lib",
   "scripts": {
     "build": "webpack --mode=production",
     "example": "node examples/index.js",
