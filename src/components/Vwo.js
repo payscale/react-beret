@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
 const Vwo = ({ accountId, init }) => {
-  window.__vwo_init = init ? init : Vwo.defaultProps.init;
+  if (typeof window !== 'undefined' && window !== null) {
+    window.__vwo_init = init ? init : Vwo.defaultProps.init;
+  }
+  
   return (
     <script
       dangerouslySetInnerHTML={{
