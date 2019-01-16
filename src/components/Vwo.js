@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
-const Vwo = ({ accountId }) => {  
-  return (
+const Vwo = ({ accountId }) =>  
+  (
     <script
       dangerouslySetInnerHTML={{
         __html: `window.__vwo_init = vwo => vwo.init();
@@ -19,11 +19,10 @@ _vwo_code.init();`
       }}
     />
   );
-};
 
 Vwo.propTypes = {
   /** The VWO account id */
-  accountId: PropTypes.string,
+  accountId: PropTypes.string
 };
 
 export default Vwo;
