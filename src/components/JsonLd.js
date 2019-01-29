@@ -9,13 +9,18 @@ const JsonLd = ({ jsonLdObjects }) => {
 
   return (
     <React.Fragment>
-      {jsonLdObjects.map((obj, id) => (
-        <script
-          type="application/ld+json"
-          key={`jsonld-${id}`}
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
-        />
-      ))}
+      {jsonLdObjects.map((obj, id) => {
+        if (obj) {
+          return (
+            <script
+              type="application/ld+json"
+              key={`jsonld-${id}`}
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
+            />
+          );
+        }
+        return null;
+      })}
     </React.Fragment>
   );
 };
