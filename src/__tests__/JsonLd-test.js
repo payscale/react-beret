@@ -15,7 +15,7 @@ describe('JsonLd', () => {
   });
 
   test('doesnt render null jsonLd script', () => {
-    const jsonLd = mount(<JsonLd jsonLdObjects={[{ '@type': 'Organization', '@context': 'http://schema.org/', 'name': 'PayScale' }, null]}></JsonLd>);
+    const jsonLd = mount(<JsonLd jsonLdObjects={[{ '@type': 'Organization', '@context': 'http://schema.org/', 'name': 'PayScale' }, null]} />);
     expect(jsonLd.children().length).toBe(1);
-  })
+  });
 });

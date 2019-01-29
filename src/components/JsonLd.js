@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // JSON LD Schema (https://json-ld.org/ and https://schema.org/)
 const JsonLd = ({ jsonLdObjects }) => {
@@ -19,6 +19,7 @@ const JsonLd = ({ jsonLdObjects }) => {
             />
           );
         }
+        return null;
       })}
     </React.Fragment>
   );
