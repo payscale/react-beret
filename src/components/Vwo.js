@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
-const Vwo = ({ accountId, hasAcceptedCookiesFuncName }) => (
+const Vwo = ({ accountId, shouldLoadVwoFuncName }) => (
   <script
     dangerouslySetInnerHTML={{
       __html: `
-if (typeof window.${hasAcceptedCookiesFuncName} === 'function' && ${hasAcceptedCookiesFuncName}()) {
+if (typeof window.${shouldLoadVwoFuncName} === 'function' && ${shouldLoadVwoFuncName}()) {
   var _vwo_code=(function(){
     var account_id='${accountId}',
     settings_tolerance=2000,
@@ -22,13 +22,13 @@ if (typeof window.${hasAcceptedCookiesFuncName} === 'function' && ${hasAcceptedC
 Vwo.propTypes = {
   /** The VWO account id */
   accountId: PropTypes.string,
-  /** The name of the function that validates if the user has accepted the cookie policy.
-   * Required for GDPR compliance. Must exist on the window object. */
-  hasAcceptedCookiesFuncName: PropTypes.string
+  /** The name of the function that checks if VWO should load.
+   * Must exist on the window object and return a boolean. */
+  shouldLoadVwoFuncName: PropTypes.string
 };
 
 Vwo.defaultProps = {
-  hasAcceptedCookiesFuncName: 'hasAcceptedCookiePolicy'
+  shouldLoadVwoFuncName: 'shouldLoadVwo'
 };
 
 export default Vwo;
