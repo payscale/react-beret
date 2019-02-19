@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Visual Web Optimizer (VWO) (A/B testing)
 const Vwo = ({ accountId }) =>  
   (
-    <script
+    <script crossorigin="anonymous"
       dangerouslySetInnerHTML={{
         __html: `window.__vwo_init = vwo => vwo.init();
 var _vwo_settings_timer;
