@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // Visual Web Optimizer (VWO) (A/B testing)
 const Vwo = ({ accountId, shouldLoadVwoFuncName }) => (
-  <script
+  <script crossorigin="anonymous"
     dangerouslySetInnerHTML={{
       __html: `
 if (typeof window.${shouldLoadVwoFuncName} === 'function' && ${shouldLoadVwoFuncName}()) {
