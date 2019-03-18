@@ -12,7 +12,7 @@ const JsonLd = ({ jsonLdObjects }) => {
       {jsonLdObjects.map((obj, id) => {
         if (obj) {
           return (
-            <script crossorigin="anonymous"
+            <script defer crossorigin="anonymous"
               type="application/ld+json"
               key={`jsonld-${id}`}
               dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
