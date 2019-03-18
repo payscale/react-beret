@@ -12,7 +12,7 @@ const Ads = ({ slots }) => {
 
   return (
     <React.Fragment>
-      <script 
+      <script async
         dangerouslySetInnerHTML={{
           __html: `var googletag = googletag || {};
 googletag.cmd = googletag.cmd || [];
@@ -27,7 +27,7 @@ googletag.cmd = googletag.cmd || [];
 })();`
         }}
       />
-      <script crossOrigin="anonymous"
+      <script async crossOrigin="anonymous"
         dangerouslySetInnerHTML={{
           __html: `googletag.cmd.push(function () {
   if (hasAcceptedCookiePolicy()) {

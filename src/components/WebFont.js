@@ -9,7 +9,7 @@ const WebFont = ({ families }) => {
   const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`);
 
   return (
-    <script crossOrigin="anonymous"
+    <script async crossOrigin="anonymous"
       dangerouslySetInnerHTML={{
         __html: `WebFontConfig = {
   google: { families: ${JSON.stringify(familyStrings)} }
