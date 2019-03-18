@@ -11,8 +11,8 @@ const JsonLd = ({ jsonLdObjects }) => {
     <React.Fragment>
       {jsonLdObjects.map((obj, id) => {
         if (obj) {
-          return (
-            <script defer crossorigin="anonymous"
+        return (
+            <script defer crossOrigin="anonymous"
               type="application/ld+json"
               key={`jsonld-${id}`}
               dangerouslySetInnerHTML={{ __html: JSON.stringify(obj) }}
