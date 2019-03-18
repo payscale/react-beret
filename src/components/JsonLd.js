@@ -11,7 +11,7 @@ const JsonLd = ({ jsonLdObjects }) => {
     <React.Fragment>
       {jsonLdObjects.map((obj, id) => {
         if (obj) {
-        return (
+          return (
             <script defer crossOrigin="anonymous"
               type="application/ld+json"
               key={`jsonld-${id}`}
