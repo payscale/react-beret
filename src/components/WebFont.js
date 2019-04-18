@@ -10,7 +10,7 @@ const WebFont = ({ families }) => {
 
   /** We download the @font-faces and then insert 'font-display: swap' so that text doesn't flash as we load the page. FOUT instead of FOIT. */
   return (
-  <script async crossOrigin="anonymous" type="text/javascript" dangerouslySetInnerHTML={{__html: `
+    <script async crossOrigin="anonymous" type="text/javascript" dangerouslySetInnerHTML={{ __html: `
     const loadFont = (url) => {
       // the 'fetch' equivalent has caching issues
       var xhr = new XMLHttpRequest();
@@ -30,7 +30,8 @@ const WebFont = ({ families }) => {
     }
     
     loadFont('https://fonts.googleapis.com/css?family=${familyStrings}');
-  `}} />
+  ` }}
+    />
   );
 };
 
