@@ -19,6 +19,7 @@ describe('WebFont', () => {
         ]}
       />
     );
-    expect(webfont.html().indexOf(`["Roboto:300,500,700"]`) > -1).toBe(true);
+    expect(webfont.html().indexOf(`loadFont('https://fonts.googleapis.com/css?family=Roboto:300,500,700')`) > -1).toBe(true);
+    expect(webfont.html().indexOf(`font-display: swap`) > -1).toBe(true);
   });
 });

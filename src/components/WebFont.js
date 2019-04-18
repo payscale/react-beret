@@ -6,24 +6,31 @@ const WebFont = ({ families }) => {
     return null;
   }
 
-  const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`);
+  const familyStrings = families.map(family => `${family.fontName}:${family.weights.join(',')}`).join('|');
 
+  /** We download the @font-faces and then insert 'font-display: swap' so that text doesn't flash as we load the page. FOUT instead of FOIT. */
   return (
-    <script async crossOrigin="anonymous"
-      dangerouslySetInnerHTML={{
-        __html: `WebFontConfig = {
-  google: { families: ${JSON.stringify(familyStrings)} }
-};
-(function() {
-  var wf = document.createElement('script');
-  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-  '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
-  wf.type = 'text/javascript';
-  wf.async = 'true';
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(wf, s);
-})();`
-      }}
+    <script async crossOrigin="anonymous" type="text/javascript" dangerouslySetInnerHTML={{ __html: `
+    const loadFont = (url) => {
+      // the 'fetch' equivalent has caching issues
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          let css = xhr.responseText;
+          css = css.replace(/}/g, 'font-display: swap; }');
+    
+          const head = document.getElementsByTagName('head')[0];
+          const style = document.createElement('style');
+          style.appendChild(document.createTextNode(css));
+          head.appendChild(style);
+        }
+      };
+      xhr.send();
+    }
+    
+    loadFont('https://fonts.googleapis.com/css?family=${familyStrings}');
+  ` }}
     />
   );
 };
